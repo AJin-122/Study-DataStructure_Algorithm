@@ -186,19 +186,33 @@ namespace Patterns
             //Console.WriteLine(myStack.pop() == null ? "yes" : "no");
 
             //큐
-            MyQueue<string> myQueue = new MyQueue<string>();
+            //MyQueue<string> myQueue = new MyQueue<string>();
 
-            myQueue.enqueue("1");
-            myQueue.enqueue("2");
-            myQueue.enqueue("3");
-            myQueue.enqueue("4");
+            //myQueue.enqueue("1");
+            //myQueue.enqueue("2");
+            //myQueue.enqueue("3");
+            //myQueue.enqueue("4");
 
-            Console.WriteLine(myQueue.dequeue());
-            Console.WriteLine(myQueue.dequeue());
-            Console.WriteLine(myQueue.dequeue());
-            Console.WriteLine(myQueue.dequeue());
-            Console.WriteLine(myQueue.dequeue());
-            Console.WriteLine(myQueue.dequeue() == null ? "yes" : "no");
+            //Console.WriteLine(myQueue.dequeue());
+            //Console.WriteLine(myQueue.dequeue());
+            //Console.WriteLine(myQueue.dequeue());
+            //Console.WriteLine(myQueue.dequeue());
+            //Console.WriteLine(myQueue.dequeue());
+            //Console.WriteLine(myQueue.dequeue() == null ? "yes" : "no");
+
+            //이진 탐색 트리
+            MyTrees<int> myTrees = new MyTrees<int>();
+
+            myTrees.insert(10);
+            myTrees.insert(5);
+            myTrees.insert(13);
+            myTrees.insert(11);
+            myTrees.insert(2);
+            myTrees.insert(16);
+            myTrees.insert(7);
+            Console.WriteLine(myTrees.insert(10) == null ? "yes" : "no");
+
+            Console.WriteLine(myTrees.find(15) != null ? "true" : "false");
         }
 
         public static void PrintList(List<int> list)
