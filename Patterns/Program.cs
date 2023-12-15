@@ -204,15 +204,27 @@ namespace Patterns
             MyTrees<int> myTrees = new MyTrees<int>();
 
             myTrees.insert(10);
-            myTrees.insert(5);
-            myTrees.insert(13);
-            myTrees.insert(11);
-            myTrees.insert(2);
-            myTrees.insert(16);
-            myTrees.insert(7);
-            Console.WriteLine(myTrees.insert(10) == null ? "yes" : "no");
+            myTrees.insert(6);
+            myTrees.insert(15);
+            myTrees.insert(3);
+            myTrees.insert(8);
+            myTrees.insert(20);
+            //Console.WriteLine(myTrees.insert(10) == null ? "yes" : "no");
 
-            Console.WriteLine(myTrees.find(15) != null ? "true" : "false");
+            //Console.WriteLine(myTrees.find(15) != null ? "true" : "false");
+
+            //트리 탐색
+            //List<int> result = myTrees.BFS();
+            //PrintList(result);
+
+            //List<int> list = myTrees.DFSPreOrder();
+            //PrintList(list);
+
+            //List<int> list = myTrees.DFSPostOrder();
+            //PrintList(list);
+
+            List<int> list = myTrees.DFSInOrder();
+            PrintList(list);
         }
 
         public static void PrintList(List<int> list)

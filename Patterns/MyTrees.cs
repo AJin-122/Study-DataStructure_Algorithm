@@ -135,5 +135,72 @@ namespace Patterns
 
             return current;
         }
+
+        //트리 너비 우선 탐색
+        public List<T> BFS()
+        {
+            List<T> list = new List<T>();
+            Queue<TNode<T>?> qu = new Queue<TNode<T>?>();
+            TNode<T>? node = this.root;
+
+            qu.Enqueue(node);
+
+            while (qu.Count > 0)
+            {
+                node = qu.Dequeue();
+                list.Add(node.value);
+                if(node.left != null) { qu.Enqueue(node.left); }
+                if (node.right != null) { qu.Enqueue(node.right); }
+            }
+
+            return list;
+        }
+
+        public List<T> DFSPreOrder()
+        {
+            var result = new List<T>();
+            return traversePreOrder(this.root, result); ;
+        }
+
+        public List<T> traversePreOrder(TNode<T>? node, List<T> data)
+        {
+            data.Add(node.value);
+            if(node.left != null) traversePreOrder(node.left, data);
+            if(node.right != null) traversePreOrder(node.right, data);
+
+            return data;
+        }
+
+        public List<T> DFSPostOrder()
+        {
+            var result = new List<T>();
+
+            return traversePostOrder(this.root, result); ;
+        }
+
+        public List<T> traversePostOrder(TNode<T>? node, List<T> data)
+        {
+            if (node.left != null) traversePostOrder(node.left, data);
+            if (node.right != null) traversePostOrder(node.right, data);
+            data.Add(node.value);
+         
+            return data;
+        }
+
+        public List<T> DFSInOrder()
+        {
+            var result = new List<T>();
+
+            return traverseInOrder(this.root, result); ;
+        }
+
+        public List<T> traverseInOrder(TNode<T>? node, List<T> data)
+        {
+            if (node.left != null) traverseInOrder(node.left, data);
+            data.Add(node.value);
+            if (node.right != null) traverseInOrder(node.right, data);
+
+            return data;
+        }
     }
 }
