@@ -201,14 +201,14 @@ namespace Patterns
             //Console.WriteLine(myQueue.dequeue() == null ? "yes" : "no");
 
             //이진 탐색 트리
-            MyTrees<int> myTrees = new MyTrees<int>();
+            //MyTrees<int> myTrees = new MyTrees<int>();
 
-            myTrees.insert(10);
-            myTrees.insert(6);
-            myTrees.insert(15);
-            myTrees.insert(3);
-            myTrees.insert(8);
-            myTrees.insert(20);
+            //myTrees.insert(10);
+            //myTrees.insert(6);
+            //myTrees.insert(15);
+            //myTrees.insert(3);
+            //myTrees.insert(8);
+            //myTrees.insert(20);
             //Console.WriteLine(myTrees.insert(10) == null ? "yes" : "no");
 
             //Console.WriteLine(myTrees.find(15) != null ? "true" : "false");
@@ -223,8 +223,37 @@ namespace Patterns
             //List<int> list = myTrees.DFSPostOrder();
             //PrintList(list);
 
-            List<int> list = myTrees.DFSInOrder();
-            PrintList(list);
+            //List<int> list = myTrees.DFSInOrder();
+            //PrintList(list);
+            
+            //힙 최대 이진 힙
+            MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>();
+
+            heap.insert(41);
+            heap.insert(39);
+            heap.insert(33);
+            heap.insert(18);
+            heap.insert(27);
+            heap.insert(12);
+            heap.insert(55);
+
+            PrintList(heap.values);
+
+            Console.WriteLine(heap.ExtractMax());
+
+            PrintList(heap.values);
+
+            Console.WriteLine(heap.ExtractMax());
+            Console.WriteLine(heap.ExtractMax());
+            Console.WriteLine(heap.ExtractMax());
+            Console.WriteLine(heap.ExtractMax());
+            Console.WriteLine(heap.ExtractMax());
+            Console.WriteLine(heap.ExtractMax());
+            Console.WriteLine(heap.ExtractMax() == default(int) ? "yes" : "no");
+            Console.WriteLine(heap.ExtractMax() == 0 ? "yes" : "no");
+
+            PrintList(heap.values);
+            
         }
 
         public static void PrintList(List<int> list)
