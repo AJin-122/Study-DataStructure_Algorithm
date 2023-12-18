@@ -225,35 +225,58 @@ namespace Patterns
 
             //List<int> list = myTrees.DFSInOrder();
             //PrintList(list);
-            
+
             //힙 최대 이진 힙
-            MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>();
+            //MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>();
 
-            heap.insert(41);
-            heap.insert(39);
-            heap.insert(33);
-            heap.insert(18);
-            heap.insert(27);
-            heap.insert(12);
-            heap.insert(55);
+            //heap.insert(41);
+            //heap.insert(39);
+            //heap.insert(33);
+            //heap.insert(18);
+            //heap.insert(27);
+            //heap.insert(12);
+            //heap.insert(55);
 
-            PrintList(heap.values);
+            //PrintList(heap.values);
 
-            Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax());
 
-            PrintList(heap.values);
+            //PrintList(heap.values);
 
-            Console.WriteLine(heap.ExtractMax());
-            Console.WriteLine(heap.ExtractMax());
-            Console.WriteLine(heap.ExtractMax());
-            Console.WriteLine(heap.ExtractMax());
-            Console.WriteLine(heap.ExtractMax());
-            Console.WriteLine(heap.ExtractMax());
-            Console.WriteLine(heap.ExtractMax() == default(int) ? "yes" : "no");
-            Console.WriteLine(heap.ExtractMax() == 0 ? "yes" : "no");
+            //Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax());
+            //Console.WriteLine(heap.ExtractMax() == default(int) ? "yes" : "no");
+            //Console.WriteLine(heap.ExtractMax() == 0 ? "yes" : "no");
 
-            PrintList(heap.values);
-            
+            //PrintList(heap.values);
+
+            //우선순위 큐
+            MyPriorityQueue<string> er = new MyPriorityQueue<string>();
+
+            er.Enqueue("common cold", 1);
+            er.Enqueue("gunshot wound", 5);
+            er.Enqueue("high fever", 4);
+            er.Enqueue("broken arm", 2);
+            er.Enqueue("glass in foot", 3);
+
+            //?? Null 경우의 값 대입
+            var one = er.Dequeue() ?? new PNode<string>("null", 0);
+            var two = er.Dequeue() ?? new PNode<string>("null", 0);
+            var three = er.Dequeue() ?? new PNode<string>("null", 0);
+            var four = er.Dequeue() ?? new PNode<string>("null", 0);
+            var five = er.Dequeue() ?? new PNode<string>("null", 0);
+            var six = er.Dequeue() ?? new PNode<string>("null",0);
+
+            Console.WriteLine(one.val + " " + one.priority);
+            Console.WriteLine(two.val + " " + two.priority);
+            Console.WriteLine(three.val + " " + three.priority);
+            Console.WriteLine(four.val + " " + four.priority);
+            Console.WriteLine(five.val + " " + five.priority);
+            Console.WriteLine(six.val + " " + six.priority);
         }
 
         public static void PrintList(List<int> list)
