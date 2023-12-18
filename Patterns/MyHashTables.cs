@@ -38,15 +38,25 @@ namespace Patterns
         public int set(string key, string value)
         {
             int index = this.hash(key);
+            var check = this.getAll(key);
+
+            if (check != null)
+            {
+                check[1] = value;
+                return index;
+            }
+
             if (this.keyMap[index] == null)
             {
                 this.keyMap[index] = new List<List<string>>();
             }
+
             this.keyMap[index].Add(new List<string>() { key, value });
+            
             return index;
         }
 
-        public List<string>? get(string key)
+        public List<string>? getAll(string key)
         {
             int index = this.hash(key);
             if (this.keyMap[index] != null)
@@ -59,6 +69,55 @@ namespace Patterns
             }
 
             return null;
+        }
+
+        public string? get(string key)
+        {
+            int index = this.hash(key);
+            if (this.keyMap[index] != null)
+            {
+                for (int i = 0; i < this.keyMap[index].Count; i++)
+                {
+                    if (this.keyMap[index][i][0] == key)
+                        return this.keyMap[index][i][1];
+                }
+            }
+
+            return null;
+        }
+
+        public List<string> values()
+        {
+            var valuesArr = new List<string>();
+            for(int i = 0; i < this.keyMap.Length; i++)
+            {
+                if (this.keyMap[i] != null)
+                {
+                    for(int j = 0; j < this.keyMap[i].Count; j++)
+                    {
+                        if (!valuesArr.Contains(this.keyMap[i][j][1]))
+                            valuesArr.Add(this.keyMap[i][j][1]);
+                    }
+                }
+            }
+            return valuesArr;
+        }
+
+        public List<string> keys()
+        {
+            var keysArr = new List<string>();
+            for (int i = 0; i < this.keyMap.Length; i++)
+            {
+                if (this.keyMap[i] != null)
+                {
+                    for (int j = 0; j < this.keyMap[i].Count; j++)
+                    {
+                        if (!keysArr.Contains(this.keyMap[i][j][0]))
+                            keysArr.Add(this.keyMap[i][j][0]);
+                    }
+                }
+            }
+            return keysArr;
         }
     }
 }

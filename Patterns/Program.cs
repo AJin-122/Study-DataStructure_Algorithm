@@ -7,6 +7,7 @@ namespace Patterns
     {
         static void Main(string[] args)
         {
+            /*
             //bool result = false;
 
             //result = FrequencyCounters.SameNaive(new List<int> { 1, 2,3,2 }, new List<int> { 9,1,4,4 });
@@ -22,19 +23,19 @@ namespace Patterns
             //int resultint = MultiplePointers.CountUniqueValues(new List<int> { 1, 2, 3, 4, 5, 4, 4, 7 });
 
             //Console.WriteLine(resultint);
-            /*
-                        if (resultList == null )
-                        {
-                            Console.WriteLine("없음");
-                        }
-                        else
-                        {
-                            foreach ( int i in resultList)
-                            {
-                                Console.Write("[{0}] ",i);
-                            }
-                        }
-            */
+            
+            //if (resultList == null )
+            //{
+            //    Console.WriteLine("없음");
+            //}
+            //else
+            //{
+            //    foreach ( int i in resultList)
+            //    {
+            //        Console.Write("[{0}] ",i);
+            //    }
+            //}
+            
             //int? result = SlidingWindow.MaxSubarraySum(new List<int> { 2, 6, 9, 2, 1, 8, 5, 6, 3 }, 3);
 
             //int result = Search.NaiveSearch("lorie loled", "lo");
@@ -280,21 +281,34 @@ namespace Patterns
 
             //해쉬 테이블
 
-            MyHashTables myhash = new MyHashTables();
-            Console.WriteLine(myhash.set("maroon", "#800000"));
-            Console.WriteLine(myhash.set("yellow", "#FFFF00"));
-            Console.WriteLine(myhash.set("olive", "#808000"));
-            Console.WriteLine(myhash.set("salmon", "#FA8072"));
-            Console.WriteLine(myhash.set("lightcoral", "#F08080"));
-            Console.WriteLine(myhash.set("mediumvioletred", "#C71585"));
-            Console.WriteLine(myhash.set("plum", "#DDA0DD"));
+            //MyHashTables myhash = new MyHashTables();
+            //Console.WriteLine(myhash.set("maroon", "#800000"));
+            //Console.WriteLine(myhash.set("yellow", "#FFFF00"));
+            //Console.WriteLine(myhash.set("olive", "#808000"));
+            //Console.WriteLine(myhash.set("salmon", "#FA8072"));
+            //Console.WriteLine(myhash.set("lightcoral", "#F08080"));
+            //Console.WriteLine(myhash.set("mediumvioletred", "#C71585"));
+            //Console.WriteLine(myhash.set("plum", "#DDA0DD"));
+            //Console.WriteLine(myhash.set("violet", "#DDA0DD"));
 
-            PrintList<string>(myhash.get("maroon") ?? new List<string> { "null"});
-            PrintList<string>(myhash.get("yellow") ?? new List<string> { "null" });
-            PrintList<string>(myhash.get("olive") ?? new List<string> { "null" });
-            PrintList<string>(myhash.get("salmon") ?? new List<string> { "null" });
-            PrintList<string>(myhash.get("lightcoral") ?? new List<string> { "null" });
-            PrintList<string>(myhash.get("nasdfuasdll") ?? new List<string> { "null" });
+            //PrintList<string>(myhash.getAll("maroon") ?? new List<string> { "null"});
+            //PrintList<string>(myhash.getAll("yellow") ?? new List<string> { "null" });
+            //PrintList<string>(myhash.getAll("olive") ?? new List<string> { "null" });
+            //PrintList<string>(myhash.getAll("salmon") ?? new List<string> { "null" });
+            //PrintList<string>(myhash.getAll("lightcoral") ?? new List<string> { "null" });
+            //PrintList<string>(myhash.getAll("nasdfuasdll") ?? new List<string> { "null" });
+
+            //Console.WriteLine(myhash.get("maroon") ?? "null");
+            //Console.WriteLine(myhash.get("nasdfuasdll") ?? "null");
+            //PrintList<string>(myhash.values());
+            //PrintList<string>(myhash.keys());
+
+            //Console.WriteLine(myhash.get("maroon"));
+            //Console.WriteLine(myhash.set("maroon", "#812341"));
+            //Console.WriteLine(myhash.get("maroon"));
+            
+            */
+
         }
 
         public static void PrintList<T>(List<T> list)
