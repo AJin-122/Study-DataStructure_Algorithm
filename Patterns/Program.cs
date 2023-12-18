@@ -255,33 +255,51 @@ namespace Patterns
             //PrintList(heap.values);
 
             //우선순위 큐
-            MyPriorityQueue<string> er = new MyPriorityQueue<string>();
+            //MyPriorityQueue<string> er = new MyPriorityQueue<string>();
 
-            er.Enqueue("common cold", 1);
-            er.Enqueue("gunshot wound", 5);
-            er.Enqueue("high fever", 4);
-            er.Enqueue("broken arm", 2);
-            er.Enqueue("glass in foot", 3);
+            //er.Enqueue("common cold", 1);
+            //er.Enqueue("gunshot wound", 5);
+            //er.Enqueue("high fever", 4);
+            //er.Enqueue("broken arm", 2);
+            //er.Enqueue("glass in foot", 3);
 
             //?? Null 경우의 값 대입
-            var one = er.Dequeue() ?? new PNode<string>("null", 0);
-            var two = er.Dequeue() ?? new PNode<string>("null", 0);
-            var three = er.Dequeue() ?? new PNode<string>("null", 0);
-            var four = er.Dequeue() ?? new PNode<string>("null", 0);
-            var five = er.Dequeue() ?? new PNode<string>("null", 0);
-            var six = er.Dequeue() ?? new PNode<string>("null",0);
+            //var one = er.Dequeue() ?? new PNode<string>("null", 0);
+            //var two = er.Dequeue() ?? new PNode<string>("null", 0);
+            //var three = er.Dequeue() ?? new PNode<string>("null", 0);
+            //var four = er.Dequeue() ?? new PNode<string>("null", 0);
+            //var five = er.Dequeue() ?? new PNode<string>("null", 0);
+            //var six = er.Dequeue() ?? new PNode<string>("null",0);
 
-            Console.WriteLine(one.val + " " + one.priority);
-            Console.WriteLine(two.val + " " + two.priority);
-            Console.WriteLine(three.val + " " + three.priority);
-            Console.WriteLine(four.val + " " + four.priority);
-            Console.WriteLine(five.val + " " + five.priority);
-            Console.WriteLine(six.val + " " + six.priority);
+            //Console.WriteLine(one.val + " " + one.priority);
+            //Console.WriteLine(two.val + " " + two.priority);
+            //Console.WriteLine(three.val + " " + three.priority);
+            //Console.WriteLine(four.val + " " + four.priority);
+            //Console.WriteLine(five.val + " " + five.priority);
+            //Console.WriteLine(six.val + " " + six.priority);
+
+            //해쉬 테이블
+
+            MyHashTables myhash = new MyHashTables();
+            Console.WriteLine(myhash.set("maroon", "#800000"));
+            Console.WriteLine(myhash.set("yellow", "#FFFF00"));
+            Console.WriteLine(myhash.set("olive", "#808000"));
+            Console.WriteLine(myhash.set("salmon", "#FA8072"));
+            Console.WriteLine(myhash.set("lightcoral", "#F08080"));
+            Console.WriteLine(myhash.set("mediumvioletred", "#C71585"));
+            Console.WriteLine(myhash.set("plum", "#DDA0DD"));
+
+            PrintList<string>(myhash.get("maroon") ?? new List<string> { "null"});
+            PrintList<string>(myhash.get("yellow") ?? new List<string> { "null" });
+            PrintList<string>(myhash.get("olive") ?? new List<string> { "null" });
+            PrintList<string>(myhash.get("salmon") ?? new List<string> { "null" });
+            PrintList<string>(myhash.get("lightcoral") ?? new List<string> { "null" });
+            PrintList<string>(myhash.get("nasdfuasdll") ?? new List<string> { "null" });
         }
 
-        public static void PrintList(List<int> list)
+        public static void PrintList<T>(List<T> list)
         {
-            foreach (int item in list)
+            foreach (T item in list)
             {
                 Console.Write(item + " ");
             }
