@@ -308,7 +308,23 @@ namespace Patterns
             //Console.WriteLine(myhash.get("maroon"));
             
             */
+            //그래프
+            MyGraph<string> graph = new MyGraph<string>();
+            graph.addVertex("Dallas");
+            graph.addVertex("Tokyo");
+            graph.addVertex("Aspen");
+            graph.addVertex("Los Angeles");
+            graph.addVertex("Hong Kong");
 
+            graph.addEdge("Dallas", "Tokyo");
+            graph.addEdge("Dallas", "Aspen");
+            graph.addEdge("Hong Kong", "Tokyo");
+            graph.addEdge("Hong Kong", "Dallas");
+            graph.addEdge("Los Angeles", "Hong Kong");
+            graph.addEdge("Hong Kong", "Aspen");
+
+            //graph.removeEdge("Dallas", "Aspen");
+            graph.removeVertex("Hong Kong");
         }
 
         public static void PrintList<T>(List<T> list)
