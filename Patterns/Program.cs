@@ -309,22 +309,43 @@ namespace Patterns
             
             */
             //그래프
-            MyGraph<string> graph = new MyGraph<string>();
-            graph.addVertex("Dallas");
-            graph.addVertex("Tokyo");
-            graph.addVertex("Aspen");
-            graph.addVertex("Los Angeles");
-            graph.addVertex("Hong Kong");
+            //MyGraph<string> graph = new MyGraph<string>();
+            //graph.addVertex("Dallas");
+            //graph.addVertex("Tokyo");
+            //graph.addVertex("Aspen");
+            //graph.addVertex("Los Angeles");
+            //graph.addVertex("Hong Kong");
 
-            graph.addEdge("Dallas", "Tokyo");
-            graph.addEdge("Dallas", "Aspen");
-            graph.addEdge("Hong Kong", "Tokyo");
-            graph.addEdge("Hong Kong", "Dallas");
-            graph.addEdge("Los Angeles", "Hong Kong");
-            graph.addEdge("Hong Kong", "Aspen");
+            //graph.addEdge("Dallas", "Tokyo");
+            //graph.addEdge("Dallas", "Aspen");
+            //graph.addEdge("Hong Kong", "Tokyo");
+            //graph.addEdge("Hong Kong", "Dallas");
+            //graph.addEdge("Los Angeles", "Hong Kong");
+            //graph.addEdge("Hong Kong", "Aspen");
 
             //graph.removeEdge("Dallas", "Aspen");
-            graph.removeVertex("Hong Kong");
+            //graph.removeVertex("Hong Kong");
+
+            //그래프 순회
+            MyGraph<string> g = new MyGraph<string>();
+
+            g.addVertex("A");
+            g.addVertex("B");
+            g.addVertex("C");
+            g.addVertex("D");
+            g.addVertex("E");
+            g.addVertex("F");
+            g.addEdge("A", "B");
+            g.addEdge("A", "C");
+            g.addEdge("B", "D");
+            g.addEdge("C", "E");
+            g.addEdge("D", "E");
+            g.addEdge("D", "F");
+            g.addEdge("E", "F");
+
+            PrintList<string>(g.DFS_Recursive("A") ?? new List<string>() { "null" });
+            PrintList<string>(g.DFS_Iterative("A") ?? new List<string>() { "null" });
+            PrintList<string>(g.BFS("A") ?? new List<string>() { "null" });
         }
 
         public static void PrintList<T>(List<T> list)
