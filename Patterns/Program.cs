@@ -327,25 +327,50 @@ namespace Patterns
             //graph.removeVertex("Hong Kong");
 
             //그래프 순회
-            MyGraph<string> g = new MyGraph<string>();
+            //MyGraph<string> g = new MyGraph<string>();
 
-            g.addVertex("A");
-            g.addVertex("B");
-            g.addVertex("C");
-            g.addVertex("D");
-            g.addVertex("E");
-            g.addVertex("F");
-            g.addEdge("A", "B");
-            g.addEdge("A", "C");
-            g.addEdge("B", "D");
-            g.addEdge("C", "E");
-            g.addEdge("D", "E");
-            g.addEdge("D", "F");
-            g.addEdge("E", "F");
+            //g.addVertex("A");
+            //g.addVertex("B");
+            //g.addVertex("C");
+            //g.addVertex("D");
+            //g.addVertex("E");
+            //g.addVertex("F");
+            //g.addEdge("A", "B");
+            //g.addEdge("A", "C");
+            //g.addEdge("B", "D");
+            //g.addEdge("C", "E");
+            //g.addEdge("D", "E");
+            //g.addEdge("D", "F");
+            //g.addEdge("E", "F");
 
-            PrintList<string>(g.DFS_Recursive("A") ?? new List<string>() { "null" });
-            PrintList<string>(g.DFS_Iterative("A") ?? new List<string>() { "null" });
-            PrintList<string>(g.BFS("A") ?? new List<string>() { "null" });
+            //PrintList<string>(g.DFS_Recursive("A") ?? new List<string>() { "null" });
+            //PrintList<string>(g.DFS_Iterative("A") ?? new List<string>() { "null" });
+            //PrintList<string>(g.BFS("A") ?? new List<string>() { "null" });
+
+            //다익스트라 알고리즘
+            WeightedGraph<string> graph = new WeightedGraph<string>();
+            graph.addVertex("A");
+            graph.addVertex("B");
+            graph.addVertex("C");
+            graph.addVertex("D");
+            graph.addVertex("E");
+            graph.addVertex("F");
+
+            graph.addEdge("A", "B", 4);
+            graph.addEdge("A", "C", 2);
+            graph.addEdge("B", "E", 3);
+            graph.addEdge("C", "D", 2);
+            graph.addEdge("C", "F", 4);
+            graph.addEdge("D", "E", 3);
+            graph.addEdge("D", "F", 1);
+            graph.addEdge("E", "F", 1);
+
+            var dij = new DijkstrasAlgorithm<string>(graph);
+
+            PrintList<string>(dij.Dijkstra("A", "E"));
+            PrintList<string>(dij.Dijkstra("A", "C"));
+            PrintList<string>(dij.Dijkstra("A", "F"));
+            PrintList<string>(dij.Dijkstra("A", "D"));
         }
 
         public static void PrintList<T>(List<T> list)
