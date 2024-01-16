@@ -348,29 +348,36 @@ namespace Patterns
             //PrintList<string>(g.BFS("A") ?? new List<string>() { "null" });
 
             //다익스트라 알고리즘
-            WeightedGraph<string> graph = new WeightedGraph<string>();
-            graph.addVertex("A");
-            graph.addVertex("B");
-            graph.addVertex("C");
-            graph.addVertex("D");
-            graph.addVertex("E");
-            graph.addVertex("F");
+            //WeightedGraph<string> graph = new WeightedGraph<string>();
+            //graph.addVertex("A");
+            //graph.addVertex("B");
+            //graph.addVertex("C");
+            //graph.addVertex("D");
+            //graph.addVertex("E");
+            //graph.addVertex("F");
 
-            graph.addEdge("A", "B", 4);
-            graph.addEdge("A", "C", 2);
-            graph.addEdge("B", "E", 3);
-            graph.addEdge("C", "D", 2);
-            graph.addEdge("C", "F", 4);
-            graph.addEdge("D", "E", 3);
-            graph.addEdge("D", "F", 1);
-            graph.addEdge("E", "F", 1);
+            //graph.addEdge("A", "B", 4);
+            //graph.addEdge("A", "C", 2);
+            //graph.addEdge("B", "E", 3);
+            //graph.addEdge("C", "D", 2);
+            //graph.addEdge("C", "F", 4);
+            //graph.addEdge("D", "E", 3);
+            //graph.addEdge("D", "F", 1);
+            //graph.addEdge("E", "F", 1);
 
-            var dij = new DijkstrasAlgorithm<string>(graph);
+            //var dij = new DijkstrasAlgorithm<string>(graph);
 
-            PrintList<string>(dij.Dijkstra("A", "E"));
-            PrintList<string>(dij.Dijkstra("A", "C"));
-            PrintList<string>(dij.Dijkstra("A", "F"));
-            PrintList<string>(dij.Dijkstra("A", "D"));
+            //PrintList<string>(dij.Dijkstra("A", "E"));
+            //PrintList<string>(dij.Dijkstra("A", "C"));
+            //PrintList<string>(dij.Dijkstra("A", "F"));
+            //PrintList<string>(dij.Dijkstra("A", "D"));
+
+            //동적 프로그램
+            Fib fib = new Fib();
+            Console.WriteLine(fib.cal_re(10));
+            var memo = new Dictionary<ulong, ulong>();
+            Console.WriteLine(fib.cal_Memoization(45, memo));
+            Console.WriteLine(fib.cal_tabulated(45));
         }
 
         public static void PrintList<T>(List<T> list)
